@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {# make options of checklist shorter #}
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .header {
+            text-align: left;
+            font-size: 12pt;
+        }    
+        .content {
+            text-align: left;
+            font-size: 12pt;
+        }
+        .indented {
+            text-indent: 0.5in;
+        }
+        .padded {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        .left-padded {
+            padding-left: 60px;
+        }
+        .right-padded {
+            padding-right: 40px;
+        }
+        .clear {
+            clear: both;
+        }
+        .margined {
+            margin-left: 12px;
+        }
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+        p {
+            margin: 0;
+        }
+        ol.alpha {
+            list-style-type: lower-alpha;
+        }
+        ol.order-brackets {
+            padding: 0;
+            counter-reset: alpha;
+        }
+        ol.order-brackets > li {
+            list-style-type: none;
+        }
+        ol.order-brackets > li:before {
+            counter-increment: alpha;
+            content:"("counter(alpha, lower-alpha)") "
+        }
+        li > span {
+            font-weight: normal;
+        }
+        table {
+            empty-cells: show;
+            width: 100%;
+        }
+        td {
+            padding: 0;
+            margin: 0;
+        }
+        /*tr > td:nth-child(3) {
+            padding-left: 40px;
+        }*/
+        span.labeled { 
+            display: inline-block;
+            vertical-align: top;
+        }
+        span.labeled span.label { 
+            display: block; 
+            text-align: left; 
+            /*border-top: 1px solid black; */
+            font-size: 9pt;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        
+        <center>
+            <a href="http://spokanediscountproperties.com/">
+                <img src="https://s3-us-west-2.amazonaws.com/spokane-discount-properties/SDP_Logo.png" alt="logo of SpokaneDiscountProperties">
+            </a>
+        </center>
+        <p>&nbsp;</p>
+        <center>
+            <video width="640" height="480" poster="{{ image }}" controls="controls">
+        <source src="{{ video }}" type="video/mp4" />
+        <a href="{{ video }}"><img src="{{ image }}" width="640" height="480" /></a>
+            </video>
+            <h1>{{ address }}</h1>
+        </center>
+        
+        <br>
+        <p>Hi %recipient_fname%,</p>
+        <br>
+        <p>We have another wholesale property and want to make sure that you have an opportunity to jump on it. The video is featured above so please, enjoy.</p>
+        <br>
+        <p>this property is located at {{ address }}<br>
+        The property characteristics are as follows...</p>
+        <br>
+        <p>
+        <b>Bedrooms:</b> {{ beds }}<br>
+        <b>Bathrooms:</b> {{ baths }}<br>
+        <b>Square Feet:</b> {{ sq_feet }}<br>
+        <b>Neighborhood:</b> {{ neighborhood }}<br>
+        <b>Property Type:</b> {{ property_type }}<br>
+        <b>Basement:</b> {{ basement }}<br>
+        <b>Garage:</b> {{ garage }}<br>
+        <b>Roof:</b> {{ roof }}<br>
+        <b>Year Built:</b> {{ yr_built }}<br>
+        </p>
+        <br>
+        <center><button class="button">Let's do it! Call: {{ phone }}</button></center>
+        <br>
+        <p>This property also includes the following great features...</p>
+
+        <ul>
+        <li>{{ feature1 }}</li>
+        <li>{{ feature2 }}</li>
+        <li>{{ feature3 }}</li>
+        </ul>
+
+        <p>See plenty of photos of this property in our Facebook gallery by clicking &#8594; <a href="{{ gallery }}">here</a></p>
+        <p>While you're there, be sure to give us a like and a share - it really helps us out and we appreciate it.</p>
+        <br>
+        <p>{{ paragraph }}</p>
+
+        <h3>The numbers:</h3>
+        <p>The after repair value (ARV) for this property is ${{ ARV }}. You can verify this number by checking your own comparable sales. The Repair cost estimate is determined internally from our own experience. Your repair costs may be higher or lower depending on qaulity of finishes, contractors used, and experience.</p>
+        <br>
+        <p>
+        <b>After Repair Value:</b> ${{ ARV }}<br>
+        <b>Repair Cost Estimate:</b> ${{ RCE }}<br>
+        <b><u>Purchase Price:</b> ${{ price }}</u><br>
+        <b>Equity:</b> ${{ ARV - RCE - price }}<br>
+        </p>
+
+        <center><button class="button">Ready? Call: {{ phone }}</button></center>
+
+        <h3>In regards to financing:</h3>
+        <p>As always, we will accept terms (seller financing) on this deal. Our rates are competitive with other hard money lenders and in many cases is much better. We generally prefer to have at least 10% down but our rates will be best with a larger down payment. All is up for negotiation but we do not accept labor or sob stories in lieu of down payment. In rare cases we can structure creative deals that include trades of <b>significant value</b> or liens on secondary property. Notice the mention of "significant value" - your '85 Civic won't cut it. Sorry.</p>
+        <br>
+        <p>It's also important to mention that we can only do commercial loans to investors only! Any buyer who is intending to occupy the property must have their own financing or cash. This is industry standard and is out of our control.</p>
+        <br>
+        
+        <center><button class="button">Call us Now! {{ phone }}</button></center>
+        <br>
+        <p>All the best to you,</p><br>
+
+        <div align="left">
+            <img src="https://s3-us-west-2.amazonaws.com/riserevenue.com/profile.jpeg" style="width:85px;height:85px;"><br>
+            Matthew Sewell / Founder<br>
+            <a href="http://riserevenue.com">SpokaneDiscountProperties.com</a><br>
+            <a href="mailto:matt@riserevenue.com">Matt@SpokaneDiscountProperties.com</a><br>
+            Phone: {{ phone }}
+        </div>
+
+        
+    </div>
+</body>
+</html>
